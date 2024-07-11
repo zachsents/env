@@ -1,6 +1,6 @@
 {
     "name": "@zachsents/env",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Better environment variables.",
     "main": "dist/index.js",
     "bin": {
@@ -21,8 +21,7 @@
     ],
     "author": "zachsents",
     "devDependencies": {
-        "@types/bun": "latest",
-        "@types/lodash.merge": "^4.6.9"
+        "@types/bun": "latest"
     },
     "peerDependencies": {
         "typescript": "^5.0.0"
