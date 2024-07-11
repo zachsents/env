@@ -1,6 +1,6 @@
 {
     "name": "@zachsents/env",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Better environment variables.",
     "main": "dist/index.js",
     "bin": {
@@ -9,7 +9,9 @@
     "scripts": {
         "build-lib": "bun build ./src/index.ts --target=node --sourcemap=inline --outdir=./dist",
         "build-cli": "bun build ./src/cli.ts --target=node --minify --outfile=./bin/zenv.js && chmod +x ./bin/zenv.js",
-        "build": "bun run build-lib && bun run build-cli"
+        "build": "bun run build-lib && bun run build-cli",
+        "publish": "bun run build && npm publish --access=public",
+        "test": "bun test"
     },
     "keywords": [
         "environment",
