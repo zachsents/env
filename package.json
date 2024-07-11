@@ -1,27 +1,30 @@
 {
-  "name": "@zachsents/env",
-  "version": "1.0.0",
-  "description": "Better environment variables.",
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "environment",
-    "env",
-    "variables",
-    "var"
-  ],
-  "author": "zachsents",
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/lodash.merge": "^4.6.9"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "lodash.merge": "^4.6.2",
-    "zod": "^3.23.8"
-  }
+    "name": "@zachsents/env",
+    "version": "1.0.0",
+    "description": "Better environment variables.",
+    "main": "dist/index.js",
+    "bin": {
+        "zenv": "./bin/zenv.js"
+    },
+    "scripts": {
+        "build-lib": "bun build ./src/index.ts --target=node --sourcemap=inline --outdir=./dist",
+        "build-cli": "bun build ./src/cli.ts --target=node --minify --outfile=./bin/zenv.js && chmod +x ./bin/zenv.js",
+        "build": "bun run build-lib && bun run build-cli"
+    },
+    "keywords": [
+        "environment",
+        "env",
+        "variables",
+        "var"
+    ],
+    "author": "zachsents",
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/lodash.merge": "^4.6.9"
+    },
+    "peerDependencies": {
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {},
+    "type": "module"
 }
